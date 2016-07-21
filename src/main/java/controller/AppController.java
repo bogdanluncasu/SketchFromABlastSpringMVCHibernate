@@ -23,6 +23,7 @@ public class AppController {
     	User u=new User();
     	u.setSurName("Leeroy");
     	u.setLastName("Jenkins");
+    	u.setId(1);
     	userDao.saveEmployee(u);
     	System.out.println("Not wow");
     	return "index";
