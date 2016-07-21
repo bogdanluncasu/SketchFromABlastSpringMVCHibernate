@@ -20,7 +20,7 @@ public abstract class AbstractDao<PK extends Serializable, T> implements Seriali
     }
      
     @Autowired
-    private SessionFactory sessionFactory;
+	protected SessionFactory sessionFactory;
  
     protected Session getSession(){
         return sessionFactory.getCurrentSession();
@@ -37,10 +37,6 @@ public abstract class AbstractDao<PK extends Serializable, T> implements Seriali
  
     public void delete(T entity) {
         getSession().delete(entity);
-    }
-     
-    protected Criteria createEntityCriteria(){
-        return getSession().createCriteria(persistentClass);
     }
  
 }
